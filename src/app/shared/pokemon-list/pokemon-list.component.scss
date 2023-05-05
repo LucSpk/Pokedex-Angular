@@ -4,6 +4,8 @@
 :host {
     display: flex;
     justify-content: space-between;
+
+    padding: rem-calc(20) 0;
     
     .pokemon {
         position: relative;
@@ -13,9 +15,9 @@
         padding: rem-calc(20);
         border-radius: rem-calc(10);
 
-        margin: rem-calc(10) 0 ;
+        background: #b3f3d5;
 
-        background: #50f0a5;
+        color: #222;
 
         &-about {
             h2 {
@@ -51,13 +53,13 @@
             align-items: center;
             justify-content: center;
 
-            height: rem-calc(110);
-            bottom: rem-calc(110);
+            height: rem-calc(120);
+            bottom: rem-calc(120);
 
             right: rem-calc(10);
             bottom: rem-calc(20);
 
-            background: url('../../../assets/bg/pokeball-bg.svg') no-repeat;
+            background: url('../../../assets/bg/pokeball.png') no-repeat;
             img {
                 width: rem-calc(140);
             }
