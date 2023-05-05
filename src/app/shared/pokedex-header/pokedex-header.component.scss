@@ -1,0 +1,21 @@
+@import '../../../config-scss/rem-calc.scss';
+@import '../../../config-scss/variables.scss';
+
+:host {
+    header {
+        .container {
+            width: 100%;
+            height: rem-calc(50);
+            
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            background: var(--primary-color);
+            img {        
+                width: rem-calc(100);
+                padding: rem-calc(10);
+            }
+        }
+    }
+}
