@@ -1,13 +1,24 @@
-<a href="#" class="pokemon">
-    <section class="pokemon-about">
-        <h2>Bulbasaur</h2>
-    <ul>
-        <li>Grass</li>
-        <li>Poison</li>
-    </ul>
-    </section>
+<!-- Search -->
+<pokemon-search></pokemon-search>
 
-    <section class="pokemon-img">
-        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png" alt="Bulbasaur">
-    </section>
-</a>
+<section class="listagem">
+    <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
+        <a [routerLink]="['details', pokemon.status.id]" href="#" class="pokemon" *ngIf="pokemon.status">
+            <section class="pokemon-about">
+                <h2>{{ pokemon.name }}</h2>
+                <ul>
+                    <li *ngFor="let value of pokemon.status.types">
+                        {{value.type.name}}
+                    </li>
+                </ul>
+                <p>#{{leadingZero(pokemon.status.id)}}</p>
+            </section>
+    
+            <section class="pokemon-img">
+                <img 
+                    [src]="pokemon.status.sprites.front_default" 
+                    [alt]="pokemon.name">
+            </section>
+        </a>
+    </ng-template>
+</section>

@@ -8,7 +8,7 @@ import { LikedsComponent } from './likeds/likeds.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'details', component: DetailsComponent },
+  { path: 'details/:id', component: DetailsComponent },
   { path: 'likeds', component: LikedsComponent }
 ];
 
