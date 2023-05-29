@@ -5,22 +5,23 @@
     .listagem {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
     
         padding: rem-calc(20) 0;
         
         .pokemon {
             position: relative;
             display: flex;
-            width: calc(30% - rem-calc(20));
+            width: 25%;
             height: rem-calc(110);
             padding: rem-calc(20) rem-calc(20) rem-calc(10) rem-calc(20);
-            margin-bottom: rem-calc(20);
+            margin: 0 rem-calc(20) rem-calc(20) 0;
             border-radius: rem-calc(10);
     
             background: #b3f3d5;
     
             color: #222;
+            transition: 0.5s;
     
             &-about {
                 display: flex;
@@ -36,6 +37,12 @@
                 ul {
                     display: flex;
                     flex-direction: column;
+
+                    .grass {
+                        background: #77c5a1;
+                        color: #d3f1e3;
+                    }
+
                     li {
                         display: flex;
                         justify-content: center;
@@ -46,18 +53,141 @@
                         padding: rem-calc(3);
     
                         border-radius: rem-calc(50);
-    
+
+                        font-size: rem-calc(14);
+                    }
+
+                    .grass {
                         background: #77c5a1;
                         color: #d3f1e3;
-                        font-size: rem-calc(14);
-    
+                    }
+                    .fire {
+                        background: #da916c;
+                        color: #FFB997;
+                    }
+                    .electric{
+                        background: #d1c76a;
+                        color: #F4ECA4;
+                    }
+                    .water{
+                        background: #5fa7bb;
+                        color: #A4D9E8;
+                    }
+                    .ground{
+                        background: #bba66b;
+                        color: #D6C8A1;
+                    }
+                    .rock{
+                        background: #c4c47f;
+                        color: #D9D9C6;
+                    }
+                    .fairy{
+                        background: #d49eb4;
+                        color: #F7DDE8;
+                    }
+                    .poison{
+                        background: #9e77a8;
+                        color: #D1B7D8;
+                    }
+                    .bug{
+                        background: #a7b37b;
+                        color: #D8E1B7;
+                    }
+                    .dragon{
+                        background: #817cb8;
+                        color: #B7B4D8;
+                    }
+                    .psychic{
+                        background: #ad71a0;
+                        color: #E1B7D8;
+                    }
+                    .ghost{
+                        background: #b858a4;
+                        color: #c985bb;
+                    }
+                    .flying{
+                        background: #7ab1bb;
+                        color: #B7D8DE;
+                    }
+                    .fighting{
+                        background: #b48b7c;
+                        color: #D8C0B7;
+                    }
+                    .normal{
+                        background: #b89a9a;
+                        color: #D8D8D8;
+                    }
+                    .ice {
+                        background: #6bc5c5;
+                        color: #B7E8E8;
                     }
                 }
-    
-                p {
+                
+                .grass {
                     font-weight: 600;
                     color: #77c5a1;
                 }
+                .fire {
+                    font-weight: 600;
+                    color: #da916c;
+                }
+                .electric{
+                    font-weight: 600;
+                    color: #d1c76a;
+                }
+                .water{
+                    font-weight: 600;
+                    color: #5fa7bb;
+                }
+                .ground{
+                    font-weight: 600;
+                    color: #bba66b;
+                }
+                .rock{
+                    font-weight: 600;
+                    color: #c4c47f;
+                }
+                .fairy{
+                    font-weight: 600;
+                    color: #d49eb4;
+                }
+                .poison{
+                    font-weight: 600;
+                    color: #9e77a8;
+                }
+                .bug{
+                    font-weight: 600;
+                    color: #a7b37b;
+                }
+                .dragon{
+                    font-weight: 600;
+                    color: #817cb8;
+                }
+                .psychic{
+                    font-weight: 600;
+                    color: #ad71a0;
+                }
+                .ghost{
+                    font-weight: 600;
+                    color: #b858a4;
+                }
+                .flying{
+                    font-weight: 600;
+                    color: #7ab1bb;
+                }
+                .fighting{
+                    font-weight: 600;
+                    color: #b48b7c;
+                }
+                .normal{
+                    font-weight: 600;
+                    color: #b89a9a;
+                }
+                .ice {
+                    font-weight: 600;
+                    color: #6bc5c5;
+                }
+                
             }
             
             &-img { 
@@ -75,11 +205,19 @@
                 bottom: rem-calc(5);
     
                 background: url('../../../assets/bg/pokeball.png') no-repeat;
+                background-position: 0% 50%;
                 img {
                     width: rem-calc(130);
                 }
             }
     
+        }
+
+        .pokemon:hover {
+            box-shadow:  
+                5px 5px 20px #cecec9,
+                -5px -5px 20px #ffffff;
+            transition: 0.5s ease-out;
         }
     }
 }

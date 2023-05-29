@@ -2,7 +2,7 @@
     <div class="box">
         <p>What pokemon are you looking for?</p>
         <form>
-            <input type="text" placeholder="Find Pokemon...">
+            <input type="text" #input (keyup)="search(input.value)" placeholder="Find Pokemon...">
             <img src="assets/icons/lupa.svg" alt="Find Pokemon">
         </form>
     </div>
