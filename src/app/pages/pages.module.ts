@@ -9,12 +9,16 @@ import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
 import { LikedsComponent } from './likeds/likeds.component';
+import { SearchComponent } from './search/search.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     DetailsComponent,
-    LikedsComponent
+    LikedsComponent,
+    SearchComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,

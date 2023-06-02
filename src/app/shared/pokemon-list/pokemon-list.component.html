@@ -3,7 +3,7 @@
 
 <section class="listagem">
     <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
-        <a [routerLink]="['details', pokemon.status.id]" href="#" class="pokemon" *ngIf="pokemon.status" [ngStyle]="{'background': estilizaCardPorTipo(pokemon.status.types)}">
+        <a [routerLink]="['/pokemon/details', pokemon.status.id]" href="#" class="pokemon" *ngIf="pokemon.status" [ngStyle]="{'background': estilizaCardPorTipo(pokemon.status.types)}">
             <section class="pokemon-about">
                 <h2>{{ pokemon.name }}</h2>
                 <ul>
