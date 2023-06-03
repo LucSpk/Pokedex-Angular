@@ -1,0 +1,86 @@
+@import '../../../config-scss/variables.scss';
+@import '../../../config-scss/rem-calc.scss';
+
+:host {
+    main {
+        .banner {
+            position: fixed;
+            left: 0px;
+            width: 100vw;
+            height: 100%;
+            background: var(--primary-color);
+            
+            padding: rem-calc(20);
+
+            display: flex;
+            justify-content: space-between;
+
+            .text-banner {  
+                
+                font-weight: 600;
+                color: #222;
+
+                display: flex;
+                gap: 20px;
+
+                .descoration-left {
+                    display: flex;
+                    align-items: center;
+                    .line-banner {
+                        width: 5px;
+                        height: 400px;
+    
+                        background-color: #222;
+                    }
+                }
+
+                .text-banner-container {
+                    width: 600px;
+                    display: flex;
+                    align-items: center;
+                    
+                    .text-banner-box {
+                        top: 100px;
+                        p {
+                            margin-left: 5px;
+                            font-size: 25px;
+                        }
+        
+                        h1 {
+                            line-height: 75px;
+                            font-size: 100px;
+                            margin-bottom: 50px;
+                        }
+        
+                        h2 {
+                            font-size: 50px;
+                            margin-left: 3px;
+                            margin-bottom: 10px;
+                        }
+        
+                        a {
+                            display: block;
+                            width: 120px;
+                            margin-left: 6px;
+                            border-radius: 5px;
+                            background-color: #222;
+                            color: white;
+                            padding: 15px;
+                        }
+                    }
+                }
+            }
+
+            .img-banner {
+                width: 35%;
+                img {
+                    padding: 50px;
+                    width: 27vw;
+                    object-fit: cover;
+                    // height: 829px;
+                }
+            }
+            
+        }
+    }
+}

@@ -14,9 +14,13 @@
             background: var(--primary-color);
             position: relative;
 
-            img {        
-                width: rem-calc(100);
-                padding: rem-calc(10);
+            .box-log {
+                z-index: 99;
+                cursor: pointer;
+                img {        
+                    width: rem-calc(100);
+                    padding: rem-calc(10);                    
+                }
             }
 
             .box-menu {
