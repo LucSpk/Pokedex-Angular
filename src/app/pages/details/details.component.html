@@ -3,63 +3,55 @@
 
 <main>
 
-    <div class="container">
-        <div class="box">
-
-
-            <div class="retornar">
-                <div class="button" [routerLink]="['/pokemon']" [class]="tipoPokemon(pokemon[0].types)" >
+    <ng-template [ngIf]="isLoading" >
+        <div class="container">
+            <div class="box">
+                <div class="retornar">
+                    <div class="button" [routerLink]="['/pokemon']" [class]="tipoPokemon(pokemon[0].types)">
+                    </div>
                 </div>
-            </div>
+                <section class="poke-details" [ngStyle]="{'background': getColorBaseTipoLt(pokemon[0].types)}">
+                    <div class="poke-ident-container">
+                        <h1 class="name-pokemon" [ngStyle]="{'color': getColorBaseTipoDk(pokemon[0].types)}">{{ toUpperCaseFirsChar(pokemon[0].name) }}</h1>
+                        <p class="id-pokemon" [ngStyle]="{'color': getColorBaseTipoDk(pokemon[0].types)}">#{{leadingZero(pokemon[0].id)}}</p>
+                        <h2 class="name-pokemon-jap" [ngStyle]="{'color': getColorBaseTipoTp(pokemon[0].types)}">{{ pokemon[1].names[0].name }}</h2>
+    
+                        <p></p>
+                        <p></p>
 
-            <section class="poke-details" [ngStyle]="{'background': estilizaCardPorTipo(pokemon[0].types)}">
-
-                <div class="poke-ident-container">
-                    <h1 class="name-pokemon">{{ toUpperCaseFirsChar(pokemon[0].name) }}</h1>
-                    <p class="id-pokemon">#{{leadingZero(pokemon[0].id)}}</p>
-                    <h2 class="name-pokemon-jap">{{ pokemon[1].names[0].name }}</h2>
-
-                    <p></p>
-                    <p></p>
-                </div>
-        
-                <div class="poke-img-container">
-                    <img 
-                        [src]="getImg(pokemon[0].id)" 
-                        [alt]="pokemon[0].name">            
-                </div>
-
-                <div class="poke-about-container">
-
-                    <section class="poke-type">
-                        <ul>
-                            <li *ngFor="let value of pokemon[0].types" [class]="value.type.name">
-                                {{toUpperCaseFirsChar(value.type.name)}}
-                            </li>
-                        </ul>
-                    </section>
-
-                    <section class="poke-stats">
-                        <h2>Estatisticas</h2>
-                        <ol>
-                            <li *ngFor="let value of pokemon[0].stats" [class]="tipoPokemon(pokemon[0].types)">
-                                <h3>
-                                    {{toUpperCaseFirsChar(value.stat.name)}}
-                                </h3>
-                                <strong>{{value.base_stat}}</strong>
-                            </li>
-                        </ol>
-                    </section>             
-                </div>
-                
-                <div class="poke-number-list">
-        
-                </div>
+                    </div>
+                    <div class="poke-img-container">
+                        <img 
+                            [src]="getImg(pokemon[0].id)" 
+                            [alt]="pokemon[0].name">            
+                    </div>
+                    <div class="poke-about-container">
+                        <section class="poke-type">
+                            <ul>
+                                <li *ngFor="let value of pokemon[0].types" [ngStyle]="{'color': getColorTipoPokemonLt(value.type.name), 'background': getColorTipoPokemonDk(value.type.name)}">
+                                    {{toUpperCaseFirsChar(value.type.name)}}
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="poke-stats">
+                            <h2 [ngStyle]="{'color': getColorBaseTipoDk(pokemon[0].types)}">Estatisticas</h2>
+                            <ol>
+                                <li *ngFor="let value of pokemon[0].stats" [ngStyle]="{'background': getColorBaseTipoDk(pokemon[0].types)}">
+                                    <h3>
+                                        {{toUpperCaseFirsChar(value.stat.name)}}
+                                    </h3>
+                                    <strong>{{value.base_stat}}</strong>
+                                </li>
+                            </ol>
+                        </section>             
+                    </div>
+                    <div class="poke-number-list">
             
-            </section>
+                    </div>
+                </section>
+            </div>
         </div>
-    </div>
-
+    </ng-template>
 </main>
 
 <!-- Footer -->

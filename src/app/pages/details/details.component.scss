@@ -1,17 +1,16 @@
 @import '../../../config-scss/rem-calc.scss';
+@import '../../../config-scss/color-type.scss';
 
 .container {
-    width: 100%;
-    height: 93vh;
-
+    margin-top: 25px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 
+    position: relative;
+
     .box {
         min-width: 100%;
-        margin-top: 25px;
-
         position: relative;
 
         .retornar {
@@ -19,17 +18,13 @@
             top: rem-calc(25);
             left: rem-calc(20);
             z-index: 99;
-
             cursor: pointer;
 
             .button {   
                 border-radius: rem-calc(2);
-    
                 width: rem-calc(20);
                 height: rem-calc(7.5);
-                
                 // background: rgba(100, 100, 100, 0.4);
-    
                 transform: rotate(-45deg);
                 position: relative;
             }
@@ -47,84 +42,62 @@
                 top: rem-calc(6);
                 right: rem-calc(7);
             }
-
-            
-
         }
 
-
-        
         .poke-details {
             height: rem-calc(550);
             padding: rem-calc(20);
             border-radius: 20px;
-
             display: flex;
             justify-content: space-between;
             align-items: center;
-
             position: relative;
-
             .poke-ident-container {
                 display: flex;
                 flex-direction: column;
-
-                
-
                 .id-pokemon {
                     font-size: 18px;
                     font-weight: 600;
                     color: #222;
                 }
-    
                 .name-pokemon {
                     font-size: 60px;
                     font-weight: 600;
                     color: #222;
                 }
-    
                 .name-pokemon-jap {
                     position: absolute;
                     top: 80px;
                     font-size: 100px;
                     font-weight: 900;
-    
                     color: rgba(50, 50, 50, 0.5);
                 }
             }
-
             .poke-img-container {
+                z-index: 1;
                 display: flex;
                 align-items: center;
                 img {
                     width: 400px;
                 }
             }
-
             .poke-about-container {
                 display: flex;
                 flex-direction: column;
-
                 .poke-type {              
                     margin-bottom: 20px;
-
                     ul {
                         display: flex;
                         flex-direction: column;
-    
                         li {
                             display: flex;
                             justify-content: center;
                             align-items: center;
-        
                             width: rem-calc(75);
                             margin: rem-calc(2.5) 0;
                             padding: rem-calc(5);
-
                             font-weight: 600;
-        
                             border-radius: rem-calc(50);
-    
                             font-size: rem-calc(16);
                         }
                     }
@@ -136,144 +109,23 @@
                         font-weight: 600;
                         color: #222;
                     }
-
                     ol {
                         li {
                             display: flex;
                             justify-content: space-between;
-
                             margin: rem-calc(10) 0;
                             padding: rem-calc(5);
-
                             border-radius: 5px;
-
                             font-weight: 600;
-
                             color: white;
 
                             h3 {
-
                                 margin-right: rem-calc(20);
                             }
                         }
                     }
                 }
             }
-
         }
     }
-}
-
-.grass{
-    background-color: #77c5a1;
-    color: #d3f1e3; 
-}
-.fire {
-    background-color: #da916c;
-    color: #FFB997;
-}
-.electric {
-    background-color: #d1c76a;
-    color: #F4ECA4;
-}
-.water {
-    background-color: #5fa7bb;
-    color: #A4D9E8;
-}
-.ground {
-    background-color: #bba66b;
-    color: #D6C8A1;
-}
-.rock {
-    background-color: #c4c47f;
-    color: #D9D9C6;
-}
-.fairy {
-    background-color: #d49eb4;
-    color: #F7DDE8;
-}
-.poison {
-    background-color: #9e77a8;
-    color: #d3c7d6;
-}
-.bug {
-    background-color: #a7b37b;
-    color: #D8E1B7;
-}
-.dragon {
-    background-color: #817cb8;
-    color: #B7B4D8;
-}
-.psychic {
-    background-color: #ad71a0;
-    color: #E1B7D8;
-}
-.ghost {
-    background-color: #b858a4;
-    color: #c985bb;
-}
-.flying {
-    background-color: #7ab1bb;
-    color: #B7D8DE;
-}
-.fighting{
-    background-color: #b48b7c;
-    color: #D8C0B7;
-}
-.normal{
-    background-color: #b89a9a;
-    color: #D8D8D8;
-}
-.ice {
-    background-color: #6bc5c5;
-    color: #B7E8E8;
-}
-
-.grass:before {
-    background-color: #77c5a1;
-}
-.fire:before {
-    background-color: #da916c;
-}
-.electric:before {
-    background-color: #d1c76a;
-}
-.water:before {
-    background-color: #5fa7bb;
-}
-.ground:before {
-    background-color: #bba66b;
-}
-.rock:before {
-    background-color: #c4c47f;
-}
-.fairy:before {
-    background-color: #d49eb4;
-}
-.poison:before {
-    background-color: #9e77a8;
-}
-.bug:before {
-    background-color: #a7b37b;
-}
-.dragon:before {
-    background-color: #817cb8;
-}
-.psychic:before {
-    background-color: #ad71a0;
-}
-.ghost:before {
-    background-color: #b858a4;
-}
-.flying:before {
-    background-color: #7ab1bb;
-}
-.fighting:before {
-    background-color: #b48b7c;
-}
-.normal:before {
-    background-color: #b89a9a;
-}
-.ice:before {
-    background-color: #6bc5c5;
 }

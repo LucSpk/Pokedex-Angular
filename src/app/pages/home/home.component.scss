@@ -40,7 +40,6 @@
                     align-items: center;
                     
                     .text-banner-box {
-                        top: 100px;
                         p {
                             margin-left: 5px;
                             font-size: 25px;
@@ -69,6 +68,41 @@
                         }
                     }
                 }
+
+                .background-pokedex-name {
+                    position: absolute;
+                    top: 75px;
+                    z-index: -1;
+                    color: rgba(0, 0, 0, 0.05);
+
+                    font-size: 250px;
+                }
+
+                .circle {
+                    position: absolute;
+                    z-index: -1;
+                    background: rgba(0, 0, 0, 0.05);
+                    
+                    
+                }
+
+                .left-bottom {
+                    width: 800px;
+                    height: 800px;
+                    border-radius: 400px;
+                    
+                    bottom: -400px;
+                    right: -250px;
+                }
+
+                .center {
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 100px;
+                    
+                    bottom: 150px;
+                    right: 700px;
+                }
             }
 
             .img-banner {
@@ -77,10 +111,8 @@
                     padding: 50px;
                     width: 27vw;
                     object-fit: cover;
-                    // height: 829px;
                 }
             }
-            
         }
     }
 }

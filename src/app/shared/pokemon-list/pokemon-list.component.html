@@ -3,15 +3,15 @@
 
 <section class="listagem">
     <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
-        <a [routerLink]="['/pokemon/details', pokemon.status.id]" href="#" class="pokemon" *ngIf="pokemon.status" [ngStyle]="{'background': estilizaCardPorTipo(pokemon.status.types)}">
+        <a [routerLink]="['/pokemon/details', pokemon.status.id]" href="#" class="pokemon" *ngIf="pokemon.status" [ngStyle]="{'background': getColorBaseTipoLt(pokemon.status.types)}">
             <section class="pokemon-about">
-                <h2>{{ pokemon.name }}</h2>
+                <h2 [ngStyle]="{'color': getColorBaseTipoDk(pokemon.status.types)}" >{{ pokemon.name }}</h2>
                 <ul>
-                    <li *ngFor="let value of pokemon.status.types" [class]="value.type.name">
+                    <li *ngFor="let value of pokemon.status.types" [ngStyle]="{'background': getColorTipoPokemonDk(value.type.name), 'color': getColorTipoPokemonLt(value.type.name)}">
                         {{value.type.name}}
                     </li>
                 </ul>
-                <p [class]="tipoPokemon(pokemon.status.types)" >#{{leadingZero(pokemon.status.id)}}</p>
+                <p [ngStyle]="{'color': getColorBaseTipoDk(pokemon.status.types)}">#{{leadingZero(pokemon.status.id)}}</p>
             </section>
     
             <section class="pokemon-img">
