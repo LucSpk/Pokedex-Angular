@@ -18,6 +18,7 @@ export class DetailsComponent {
 
   public pokemon: any;
   public isLoading: boolean = false;
+  public apiError: boolean = false;
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -37,7 +38,8 @@ export class DetailsComponent {
       res => {
         this.pokemon = res; 
         this.isLoading = true;
-        console.log(this.pokemon);
+      }, error => {
+        this.apiError = true;
       }
     );
   }

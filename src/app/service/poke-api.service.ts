@@ -10,7 +10,7 @@ export class PokeApiService {
 
   private baseUrl: string = 'https://pokeapi.co/api/v2/';
   private offset: number = 0;
-  private limit: number = 200;
+  private limit: number = 151;
 
   constructor(
     private http: HttpClient

@@ -12,6 +12,9 @@ export class PokemonListComponent {
   private setAllPokemons: any;
   public getAllPokemons: any;
 
+  public apiError: boolean = false;
+  public isLoading: boolean = false;
+
   cardColors = {
     fire: '#FDDFDF',
     grass: '#DEFDE0',
@@ -50,6 +53,9 @@ export class PokemonListComponent {
 
         this.setAllPokemons = res.results;
         this.getAllPokemons = this.setAllPokemons;
+        this.isLoading = true;
+      }, error => {
+        this.apiError = true;
       }
     );
   }

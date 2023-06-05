@@ -52,6 +52,17 @@
             </div>
         </div>
     </ng-template>
+    
+    <div class="error-mensage" *ngIf="apiError">
+        <div class="mensage">
+            <h1>Ops</h1>
+            <h1>Pokedex</h1>
+            <h2>Parou de funcionar</h2>
+            <h2>tente novamente</h2>
+        </div>
+        <img src="./../../../assets/error_gengar.gif" alt="Erro ao buscar o pokemon" width="50%">
+    </div>
+
 </main>
 
 <!-- Footer -->
