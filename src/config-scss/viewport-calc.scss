@@ -1,0 +1,4 @@
+@function viewport-calc($size) {
+    $value: calc($size / 19.2);
+    @return #{$value}vw;
+}

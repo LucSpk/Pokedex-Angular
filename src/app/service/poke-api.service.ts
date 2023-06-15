@@ -33,4 +33,8 @@ export class PokeApiService {
       map((res: any) => res)
     );
   }
+
+  public getTotalPokemon() {
+    return this.limit;
+  }
 }

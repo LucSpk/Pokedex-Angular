@@ -15,9 +15,11 @@
                         <h1 class="name-pokemon" [ngStyle]="{'color': getColorBaseTipoDk(pokemon[0].types)}">{{ toUpperCaseFirsChar(pokemon[0].name) }}</h1>
                         <p class="id-pokemon" [ngStyle]="{'color': getColorBaseTipoDk(pokemon[0].types)}">#{{leadingZero(pokemon[0].id)}}</p>
                         <h2 class="name-pokemon-jap" [ngStyle]="{'color': getColorBaseTipoTp(pokemon[0].types)}">{{ pokemon[1].names[0].name }}</h2>
-    
-                        <p></p>
-                        <p></p>
+                        
+                        <div class="dados-fisicos" [ngStyle]="{'color': getColorBaseTipoDk(pokemon[0].types)}">
+                            <p>Altura: {{converteAltura(pokemon[0].height)}}</p>
+                            <p>Peso: {{convertePeso(pokemon[0].weight)}}</p>
+                        </div>
 
                     </div>
                     <div class="poke-img-container">
@@ -45,12 +47,16 @@
                             </ol>
                         </section>             
                     </div>
-                    <div class="poke-number-list">
-            
-                    </div>
                 </section>
             </div>
         </div>
+
+        <div class="poke-number-list">
+            <ol [ngStyle]="{'background': getColorBaseTipoLt(pokemon[0].types)}">
+                <li *ngFor="let id of listIds" (click)="mudapokemon(id)">{{ id }}</li>
+            </ol>
+        </div>
+
     </ng-template>
     
     <div class="error-mensage" *ngIf="apiError">

@@ -1,155 +1,194 @@
 @import '../../../config-scss/rem-calc.scss';
+@import '../../../config-scss/viewport-calc.scss';
 @import '../../../config-scss/color-type.scss';
 
-.container {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
-    position: relative;
-
-    .box {
-        min-width: 100%;
-        position: relative;
-
-        .retornar {
-            position: absolute;
-            top: rem-calc(25);
-            left: rem-calc(20);
-            z-index: 99;
-            cursor: pointer;
-
-            .button {   
-                border-radius: rem-calc(2);
-                width: rem-calc(20);
-                height: rem-calc(7.5);
-                // background: rgba(100, 100, 100, 0.4);
-                transform: rotate(-45deg);
-                position: relative;
-            }
-    
-            .button:before {
-                content: "";
-                width: rem-calc(20);
-                height: rem-calc(7.5);
-                border-radius: rem-calc(2);
-                
-                // background-color: rgba(100, 100, 100, 0.4);
-                
-                position: absolute;
-                transform: rotate(90deg);
-                top: rem-calc(6);
-                right: rem-calc(7);
-            }
-        }
-
-        .poke-details {
-            height: rem-calc(550);
-            padding: rem-calc(20);
-            border-radius: 20px;
+:host {
+    main {
+        .container {
+            margin-top: viewport-calc(25);
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+        
             position: relative;
-            .poke-ident-container {
-                display: flex;
-                flex-direction: column;
-                .id-pokemon {
-                    font-size: 18px;
-                    font-weight: 600;
-                    color: #222;
-                }
-                .name-pokemon {
-                    font-size: 60px;
-                    font-weight: 600;
-                    color: #222;
-                }
-                .name-pokemon-jap {
+        
+            .box {
+                position: relative;
+        
+                .retornar {
                     position: absolute;
-                    top: 80px;
-                    font-size: 100px;
-                    font-weight: 900;
-                    color: rgba(50, 50, 50, 0.5);
+                    top: viewport-calc(25);
+                    left: viewport-calc(20);
+                    z-index: 99;
+                    cursor: pointer;
+        
+                    .button {   
+                        border-radius: viewport-calc(2);
+                        width: viewport-calc(20);
+                        height: viewport-calc(7.5);
+                        // background: rgba(100, 100, 100, 0.4);
+                        transform: rotate(-45deg);
+                        position: relative;
+                    }
+            
+                    .button:before {
+                        content: "";
+                        width: viewport-calc(20);
+                        height: viewport-calc(7.5);
+                        border-radius: viewport-calc(2);
+                        
+                        // background-color: rgba(100, 100, 100, 0.4);
+                        
+                        position: absolute;
+                        transform: rotate(90deg);
+                        top: viewport-calc(6);
+                        right: viewport-calc(7);
+                    }
                 }
-            }
-            .poke-img-container {
-                z-index: 1;
-                display: flex;
-                align-items: center;
-                img {
-                    width: 400px;
-                }
-            }
-            .poke-about-container {
-                display: flex;
-                flex-direction: column;
-                .poke-type {              
-                    margin-bottom: 20px;
-                    ul {
+        
+                .poke-details {
+                    width: viewport-calc(1100);
+                    height: viewport-calc(550);
+                    padding: viewport-calc(20);
+                    border-radius: 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    position: relative;
+                    .poke-ident-container {
                         display: flex;
                         flex-direction: column;
-                        li {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            width: rem-calc(75);
-                            margin: rem-calc(2.5) 0;
-                            padding: rem-calc(5);
+                        .id-pokemon {
+                            font-size: viewport-calc(18);
                             font-weight: 600;
-                            border-radius: rem-calc(50);
-                            font-size: rem-calc(16);
+                            color: #222;
+                        }
+                        .name-pokemon {
+                            font-size: viewport-calc(60);
+                            font-weight: 600;
+                            color: #222;
+                        }
+                        .name-pokemon-jap {
+                            position: absolute;
+                            top: viewport-calc(80);
+                            font-size: viewport-calc(100);
+                            font-weight: 900;
+                            color: rgba(50, 50, 50, 0.5);
+                        }    
+                        .dados-fisicos {
+                            font-size: viewport-calc(24);
+                            height: viewport-calc(100);
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: end;
+                            margin-left: viewport-calc(150);
+                            font-weight: 600;
+                            p {
+                                padding: viewport-calc(2.5);
+                            }
                         }
                     }
-                }
-            
-                .poke-stats {
-                    h2 {
-                        font-size: 24px;
-                        font-weight: 600;
-                        color: #222;
+        
+                    .poke-img-container {
+                        z-index: 1;
+                        display: flex;
+                        align-items: center;
+                        img {
+                            width: viewport-calc(400);
+                        }
                     }
-                    ol {
-                        li {
-                            display: flex;
-                            justify-content: space-between;
-                            margin: rem-calc(10) 0;
-                            padding: rem-calc(5);
-                            border-radius: 5px;
-                            font-weight: 600;
-                            color: white;
-
-                            h3 {
-                                margin-right: rem-calc(20);
+                    .poke-about-container {
+                        display: flex;
+                        flex-direction: column;
+                        .poke-type {              
+                            margin-bottom: viewport-calc(20);
+                            ul {
+                                display: flex;
+                                flex-direction: column;
+                                li {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    width: viewport-calc(75);
+                                    margin: viewport-calc(2.5) 0;
+                                    padding: viewport-calc(5);
+                                    font-weight: 600;
+                                    border-radius: viewport-calc(50);
+                                    font-size: viewport-calc(16);
+                                }
+                            }
+                        }
+                    
+                        .poke-stats {
+                            h2 {
+                                font-size: viewport-calc(24);
+                                font-weight: 600;
+                                color: #222;
+                            }
+                            ol {
+                                li {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    margin: viewport-calc(10) 0;
+                                    padding: viewport-calc(5);
+                                    border-radius: viewport-calc(5);
+                                    font-size: viewport-calc(16);
+                                    font-weight: 600;
+                                    color: white;
+        
+                                    h3 {
+                                        margin-right: viewport-calc(20);
+                                    }
+                                }
                             }
                         }
                     }
                 }
             }
         }
-    }
-}
-
-.error-mensage {
-    display: flex;
-    align-items: center;
-
-    color: #22222290;
-    .mensage {
-        h1 {
-            font-size: 100px;
-            font-weight: 600;
-            line-height: 80px;
+        
+        .poke-number-list {
+            display: flex;  
+            justify-content: center;
+            
+            margin-top: viewport-calc(10);
+            ol {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: viewport-calc(20);
+                padding: viewport-calc(10) viewport-calc(20);
+                border-radius: viewport-calc(20);
+                font-weight: 600;
+                color: white;
+                li {
+                    cursor: pointer;
+                }
+            }
         }
-        h1:first-child {
-            margin-left: 30px;
-        }
-        h2 {
-            font-size: 50px;
-            line-height: 35px;
-        }
-        h2:last-child {
-            margin-left: 75px;
+        
+        .error-mensage {
+            display: flex;
+            align-items: center;
+        
+            color: #22222290;
+            .mensage {
+                h1 {
+                    font-size: viewport-calc(100);
+                    font-weight: 600;
+                    line-height: viewport-calc(80);
+                }
+                h1:first-child {
+                    margin-left: viewport-calc(30);
+                }
+                h2 {
+                    font-size: viewport-calc(50);
+                    line-height: viewport-calc(35);
+                }
+                h2:last-child {
+                    margin-left: viewport-calc(75);
+                }
+            }
         }
     }
 }
