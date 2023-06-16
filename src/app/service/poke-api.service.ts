@@ -28,6 +28,12 @@ export class PokeApiService {
     );
   }
 
+  public apiGetPokemonPorId(id: number):Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}pokemon/${id}`).pipe(
+      res => res
+    );
+  }
+
   public apiGetPokemons(url: string):Observable<any> {
     return this.http.get<any>(url).pipe(
       map((res: any) => res)

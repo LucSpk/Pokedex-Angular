@@ -78,9 +78,8 @@
                         .dados-fisicos {
                             font-size: viewport-calc(24);
                             height: viewport-calc(100);
-                            display: flex;
+                            display: flex-end;
                             flex-direction: column;
-                            justify-content: end;
                             margin-left: viewport-calc(150);
                             font-weight: 600;
                             p {

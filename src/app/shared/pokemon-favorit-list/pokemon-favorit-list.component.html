@@ -1,0 +1,32 @@
+<!-- Search -->
+<pokemon-search (emmitSearch)="getSearch($event)"></pokemon-search>
+
+<section class="listagem" *ngIf="isLoading">
+    <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
+        <a [routerLink]="['/pokemon/details', pokemon.id]" href="#" class="pokemon" [ngStyle]="{'background': getColorBaseTipoLt(pokemon.types)}">
+            <section class="pokemon-about">
+                <h2 [ngStyle]="{'color': getColorBaseTipoDk(pokemon.types)}" >{{ pokemon.name }}</h2>
+                <ul>
+                    <li *ngFor="let value of pokemon.types" [ngStyle]="{'background': getColorTipoPokemonDk(value.type.name), 'color': getColorTipoPokemonLt(value.type.name)}">
+                        {{value.type.name}}
+                    </li>
+                </ul>
+                <p [ngStyle]="{'color': getColorBaseTipoDk(pokemon.types)}">#{{leadingZero(pokemon.id)}}</p>
+            </section>
+            <section class="pokemon-img">
+                <img 
+                [src]="pokemon.sprites.front_default" 
+                [alt]="pokemon.name">
+            </section>
+        </a>
+    </ng-template>
+</section>
+
+<div class="error-mensage" *ngIf="apiError">
+    <div class="mensage">
+        <h1>Ops</h1><h1>Pokedex</h1>
+        <h2>Parou de funcionar</h2>
+        <h2>tente novamente</h2>
+    </div>
+    <img src="./../../../assets/error_gengar.gif" alt="Erro ao buscar o pokemon" width="50%">
+</div>

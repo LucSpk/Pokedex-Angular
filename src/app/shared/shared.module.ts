@@ -7,19 +7,22 @@ import { PokedexHeaderComponent } from './pokedex-header/pokedex-header.componen
 import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokedexFooterComponent } from './pokedex-footer/pokedex-footer.component';
+import { PokemonFavoritListComponent } from './pokemon-favorit-list/pokemon-favorit-list.component';
 
 @NgModule({
   declarations: [
     PokedexHeaderComponent,
     PokemonSearchComponent,
     PokemonListComponent,
-    PokedexFooterComponent
+    PokedexFooterComponent,
+    PokemonFavoritListComponent
   ],
   exports: [
     PokedexHeaderComponent,
     PokemonSearchComponent,
     PokemonListComponent,
-    PokedexFooterComponent
+    PokedexFooterComponent,
+    PokemonFavoritListComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,105 @@
+@import '../../../config-scss/rem-calc.scss';
+@import '../../../config-scss/variables.scss';
+
+:host {
+    .listagem {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    
+        padding: rem-calc(20) 0;
+        
+        .pokemon {
+            position: relative;
+            display: flex;
+            width: 25%;
+            height: rem-calc(110);
+            padding: rem-calc(20) rem-calc(20) rem-calc(10) rem-calc(20);
+            margin: 0 rem-calc(20) rem-calc(20) 0;
+            border-radius: rem-calc(10);
+            transition: 0.5s;
+            &-about {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                h2 {
+                    font-size: rem-calc(22);
+                    font-style: italic;
+                    font-weight: 700;
+                    text-transform: capitalize;
+                }
+                
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    li {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+    
+                        width: rem-calc(75);
+                        margin: rem-calc(2.5) 0;
+                        padding: rem-calc(3);
+    
+                        border-radius: rem-calc(50);
+
+                        font-size: rem-calc(14);
+                    }
+                } 
+                p {
+                    font-weight: 600;
+                }           
+            }
+            &-img { 
+                position: absolute;
+    
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+    
+                height: rem-calc(120);
+                bottom: rem-calc(120);
+    
+                right: rem-calc(10);
+                bottom: rem-calc(5);
+    
+                background: url('../../../assets/bg/pokeball.png') no-repeat;
+                background-position: 0% 50%;
+                img {
+                    width: rem-calc(130);
+                }
+            }
+        }
+        .pokemon:hover {
+            box-shadow:  
+                5px 5px 20px #cecec9,
+                -5px -5px 20px #ffffff;
+            transition: 0.5s ease-out;
+        }
+    }
+
+    .error-mensage {
+        display: flex;
+        align-items: center;
+    
+        color: #22222290;
+        .mensage {
+            h1 {
+                font-size: 100px;
+                font-weight: 600;
+                line-height: 80px;
+            }
+            h1:first-child {
+                margin-left: 30px;
+            }
+            h2 {
+                font-size: 50px;
+                line-height: 35px;
+            }
+            h2:last-child {
+                margin-left: 75px;
+            }
+        }
+    }
+}

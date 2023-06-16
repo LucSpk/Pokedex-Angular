@@ -1,34 +1,48 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { PokeApiService } from 'src/app/service/poke-api.service';
 
 import { TypeColorLt, TypeColorDk } from '../../models/typesColor';
+import { Pokemon, Status } from 'src/app/models/pokemon';
+
 
 @Component({
-  selector: 'pokemon-list',
-  templateUrl: './pokemon-list.component.html',
-  styleUrls: ['./pokemon-list.component.scss']
+  selector: 'pokemon-favorit-list',
+  templateUrl: './pokemon-favorit-list.component.html',
+  styleUrls: ['./pokemon-favorit-list.component.scss']
 })
-export class PokemonListComponent {
-  private setAllPokemons: any;
+export class PokemonFavoritListComponent {
+
+  private setAllPokemons: any = [];
   public getAllPokemons: any;
 
   public apiError: boolean = false;
   public isLoading: boolean = false;
+  
+  public pokeFavorits = [1, 4, 7, 9, 18, 23, 37, 42];
 
   constructor(
     private pokeApiService: PokeApiService
   ) {}
 
-  ngOnInit(): void{
-    this.pokeApiService.apiListAllPokemons.subscribe(
-      res => {
-        this.setAllPokemons = res.results;
-        this.getAllPokemons = this.setAllPokemons;
-        this.isLoading = true;
-      }, error => {
-        this.apiError = true;
-      }
-    );
+  ngOnInit() {
+    this.filterFavorits();
+  }
+
+  public filterFavorits() {
+    for(let i = 0; i < this.pokeFavorits.length; i++) {
+      this.pokeApiService.apiGetPokemonPorId(this.pokeFavorits[i]).subscribe(
+        (res: any) => {
+          this.setAllPokemons[i] = res;
+          this.isLoading = true;
+          this.apiError = false;
+        }, error => {
+          this.isLoading = false;
+          this.apiError = true;
+        }
+      );
+      this.getAllPokemons = this.setAllPokemons;
+    }
+    console.log(this.getAllPokemons);
   }
 
   public getSearch(value: string) {
@@ -64,5 +78,4 @@ export class PokemonListComponent {
   public getColorTipoPokemonDk(type: string): string {
     return TypeColorDk[type as keyof typeof TypeColorDk];
   }
-
 }

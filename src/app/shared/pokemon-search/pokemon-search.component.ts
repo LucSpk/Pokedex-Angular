@@ -16,7 +16,6 @@ export class PokemonSearchComponent {
 
   public search(value: string) {
     this.emmitSearch.emit(value);
-
   }
 
 }
